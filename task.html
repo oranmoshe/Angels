@@ -16,43 +16,47 @@
 			</div>
 			<nav>
 				<ul>
-					<li>
-						<img src="images/header/settings.png">
-					</li>
-					<li>
-						<img src="images/header/shop.png">
-					</li>
-					<li>
-						<img src="images/header/tasks.png">
-					</li>
-					<li>
-						<img src="images/header/notifications.png">
-					</li>
-					<li>
-						<img src="images/header/home.png">
-					</li>
-					<li>
-						<img src="images/profile/profile1.png">
-					</li>
+					<li><img src="images/header/settings.png"></li>
+					<li><img src="images/header/shop.png"></li>
+					<li><img src="images/header/tasks.png"></li>
+					<li><img src="images/header/notifications.png"></li>
+					<li><a href="index.html"><img src="images/header/home.png"></a></li>
+					<li><img src="images/profile/profile1.png"></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>
 		</header>
 		<div id="wrapper">
 			<main>
-				<article class="box">
-					<div class="boxProfilePic">
-						<img src="images/profile/profile1.png">
+				<article class="alert green">
+					<img src="images/icons/iconSuccess.png" class="icon">
+					<span> Your task created successfully! </span>
+					<img src="images/icons/iconClose.png" class="close">
+				</article>
+				<article class="box profile">
+					<div class="pic">
+						<img src="images/profile/profile1big.png">
 					</div>
-					<div class="boxProfileInfo">					
+					<div class="info">					
 						<span class="golden">Nira Ronson</span>
 						<br>
-						<span class="ProfileLevel">Gold Angel</span>
+						<span class="level">Gold Angel</span>
 					</div>
 					<div class="clear"></div>
-					<div class="boxProfileWallet">
-						<img src="images/icons/iconCoinsGold.png">
-						<span> You earned <b>2,300</b> Coins</span>
+				</article>
+				<article class="box details">
+					<div class="row"><div><img><span>11/5/16 12:00</span></div></div>
+					<div class="row"><div><img><span>Rishon Letzion, Dror</span></div></div>
+					<div class="row"><div><img><span>People - Hitchhiking</span></div></div>
+				</article>
+				<div class="clear"></div>
+				<article class="box description">
+					<div class="postContent">
+						I am sick and can not produce music . There is someone that is close to Super - Pharm can buy me Advil?
+					</div>
+					<div class="activity">
+						<span><img src="images/icons/iconLikeGold.png">3.4k</span>
+						<span><img src="images/icons/iconShareGold.png">1.2k</span>
 					</div>
 				</article>
 				<article>
@@ -61,20 +65,14 @@
 					<br>
 					<input placeholder="Need some help?" class="tb">
 					<br><br>
-					<a><img src="images/icons/iconPinGold.png"  style="width: 10px;"><span>Ramat Gan, Anna Frank</span></a>
-					<a><img src="images/icons/iconFriendsGold.png" style="width: 15px;vertical-align: middle;"><span>Invite Friends</span></a>
-					<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn">
-					<input type="image" src="images/buttons/btnPublic.png" alt="Submit" class="btn">
-					<div class="clear"></div>
-				</article>
-				<article class="box">
-					<h2>
-						Angels Map
-					</h2>
-					<p>
-						<img src="images/mapIndex.png" style="width: 100%;">
-					</p>
-				</article>
+					<div class="toggle">
+						<a><img src="images/icons/iconPinGold.png"  style="width: 10px;"><span>Ramat Gan, Anna Frank</span></a>
+						<a><img src="images/icons/iconFriendsGold.png" style="width: 15px;vertical-align: middle;"><span>Invite Friends</span></a>
+						<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn">
+						<input type="image" src="images/buttons/btnPublic.png" alt="Submit" class="btn">
+						<div class="clear"></div>
+					</div>
+				</article>				
 				<article>
 					<div class="postPic"><img src="images/profile/profile8.png"></div>
 					<div class="postBody">
@@ -151,17 +149,36 @@
 					<div class="clear"></div>
 				</article>
 			</main>
-			<aside id="task">
+			<aside>
 				<article class="box">
 					<h2>Hot Coupons</h2>
-					<figure>
-						<img src="images/cuopons/bag.png" alt="Michael Kors">
-						<figcaption>Michael Kors<br><span><img src="images/icons/iconCoinsGold.png">1025 coins</span></figcaption>
-					</figure>
-					<figure>
-						<img src="images/cuopons/s-l400.png" alt="Michael Kors">
-						<figcaption>GoPro HERO4<br><span><img src="images/icons/iconCoinsGold.png">800 coins</span></figcaption>
-					</figure>
+					<div>
+						<div><span>0</span><br><span>Going</span></div>
+						<div><span>0</span><br><span>Maybe</span></div>
+						<div><span>4</span><br><span>Invited</span></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</article>
+				<article class="box">
+					<h2>Attached</h2>
+					<div>
+						<figure>
+						<img src="images/attached/img1.png" alt="Michael Kors">
+						<figcaption>My Grandfather</figcaption>
+						</figure>						
+					</div>
+					<div class="clear"></div>
+				</article>
+				<article class="box">
+					<h2>How to get here</h2>
+					<p>
+						<figure>
+						<img src="images/smallMap.png" alt="map">
+						<figcaption>Rishon Letzion, Dror</figcaption>
+						</figure>
+					</p>
+					<div class="clear"></div>
 				</article>
 			</aside>
 			<div class="clear"></div>

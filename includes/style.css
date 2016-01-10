@@ -26,8 +26,12 @@ ul {
 p{
 	padding: 10px;
 }
+a img{
+	border: 0px;
+}
 /* header */
 header{
+	z-index: 9999;
 	position: fixed;
 	top: 0px;
 	width: 100%;
@@ -110,7 +114,7 @@ article nav ul li{
 	vertical-align: center;
 	line-height: 30px;
 	height: 30px;
-	border-bottom: 1px solid #b0bec5;
+	border-bottom: 1px solid #D8DFE2;
 }
 article nav ul li img{
 	width: 16px;
@@ -138,7 +142,7 @@ article.box{
 }
 article.box h2{
 	padding-left: 10px;
-	border-bottom: 1px solid #b0bec5;
+	border-bottom: 1px solid #D8DFE2;
 	font-size: 14px;
 	height: 45px;
 	line-height: 45px;
@@ -153,7 +157,7 @@ article.box ul li{
 	line-height: 38px;
 	height: 38px;
 	padding-left: 10px;
-	border-bottom: 1px solid #b0bec5;
+	border-bottom: 1px solid #D8DFE2;
 }
 article ul li:last-child{
 	border-bottom: 0px;
@@ -220,7 +224,7 @@ section#leftSec{
 }
 .boxProfileWallet {
 	padding: 4%;
-	border-top: 1px solid #b0bec5;
+	border-top: 1px solid #D8DFE2;
 }
 .boxProfileWallet img{
 	height: 14px;
@@ -303,35 +307,162 @@ aside figure figcaption span{
 aside figure figcaption img{
 	width: 10%;
 }
+/* alerts */
 
+.alert{
+	position: relative;
+	padding: 5px;
+	height: 15px;
+}
+.alert span{
+	color: #689f38;
+	margin: 20px;
+}
+.alert .icon{
+	position: absolute;
+	left: 5px;
+}
+.alert .close{
+	position: absolute;
+	right: 5px;
+}
+.alert.green{
+	border-color: #72bb53;
+}
 /* task part*/
 #taskPage #wrapper{
 	margin: 70px auto;
 	width: 836px;
 	display: block;	
 }
-#taskPage aside#task{
+#taskPage main{
+	margin-left: 0px;
+}
+#taskPage aside{
 	margin-left:20px;
 	width: 278px;
 	float: left;
 	height: 100%;
 }
-#taskPage aside#task figure{
-	width: 100%;
+#taskPage aside figure{
+	width: 50%;
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	float: left;
 }
-#taskPage aside#task figure img{
+#taskPage aside figure img{
 	width: 80%;
 }
-#taskPage aside#task figure figcaption span{
+#taskPage aside figure figcaption span{
 	font-size: 10px;
 }
-#taskPage aside#task figure figcaption img{
+#taskPage aside figure figcaption img{
 	width: 10%;
 }
+#taskPage #wrapper aside article>div{
+	padding: 2%;
+}
+#taskPage #wrapper aside article div div{
+	text-align: center;
+	width: 33%;
+	float: left;
+	color: #000000;
+}
+#taskPage #wrapper aside article div div span:nth-child(1){
+	font-size: 20px;
+}
+.toggle{
+	display: none;	
+}
 
-
-
+.box.profile{
+	float: left;
+	position: relative;
+	height: 110px;
+	width: 237px;
+	font-size: 90px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	margin-bottom: 0px;
+}
+.box.profile .pic{
+	position: relative;
+	top: 15px;
+	margin-left: 10px;
+	float: left;
+	text-align: right;
+}
+.box.profile .pic img{
+	vertical-align: top;
+}
+.box.profile .info{
+	margin-left: 10px;
+	position: relative;
+	top: 30px;
+	vertical-align: top;
+	font-family: 'Josefin Sans', sans-serif;
+	float: left;
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
+}
+.box.profile .level{
+	font-size: 14px;
+}
+.box.profile .wallet {
+	padding: 4%;
+	border-top: 1px solid #D8DFE2;
+}
+.box.profile .wallet img{
+	height: 14px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.box.details{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	float: left;
+	border-left: 0px;
+	width: 298px;
+	height: 110px;
+	color: #546e7a;
+	margin-bottom: 0px;
+}
+.box.details .row{
+	padding-left: 5px;
+	height: 30px;
+	font-size: 13px;
+	position: relative;
+}
+.box.details .row:nth-child(1) div{
+	position: absolute;
+	bottom: 2px;
+}
+.box.details .row:nth-child(2) div{
+	position: absolute;
+	top: 2px;
+}
+.box.details .row:last-child{
+	vertical-align: middle;
+	padding: 5px;
+	height: 30px;
+	line-height: 30px;
+	border-top: 1px solid #D8DFE2;
+	font-size: 16px;
+}
+.box.description{
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	position: relative;
+	width: 516px;
+	border-top: 0px;
+	padding: 10px;
+}
+.box.description .postContent{
+	font-size: 16px;
+	font-family: 'Josefin Sans', sans-serif;
+}
 
