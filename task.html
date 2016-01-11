@@ -5,6 +5,8 @@
 		<link href="includes/style.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,700,700italic,600italic,600,400italic,300italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="includes/scripts.js"></script>
 	</head>
 	<body id="taskPage">
 		<header>
@@ -31,7 +33,7 @@
 				<article class="alert green">
 					<img src="images/icons/iconSuccess.png" class="icon">
 					<span> Your task created successfully! </span>
-					<img src="images/icons/iconClose.png" class="close">
+					<img src="images/icons/iconClose.png" class="close" id="alertClose">
 				</article>
 				<article class="box profile">
 					<div class="pic">
@@ -55,16 +57,15 @@
 						I am sick and can not produce music . There is someone that is close to Super - Pharm can buy me Advil?
 					</div>
 					<div class="activity">
-						<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-						<span><img src="images/icons/iconShareGold.png">1.2k</span>
+						<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+						<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
 					</div>
 				</article>
 				<article>
 					<a><img src="images/icons/iconPhotoGold.png"  style="width: 16px;"><span>Add Photo/Video</span></a>
 					<a><img src="images/icons/iconDocumentGold.png" style="width: 14px;vertical-align: middle;"><span>Add Document</span></a>
 					<br>
-					<input placeholder="Need some help?" class="tb">
-					<br><br>
+					<input placeholder="Write somthing.." class="tb" id="textBoxTaskPost">
 					<div class="toggle">
 						<a><img src="images/icons/iconPinGold.png"  style="width: 10px;"><span>Ramat Gan, Anna Frank</span></a>
 						<a><img src="images/icons/iconFriendsGold.png" style="width: 15px;vertical-align: middle;"><span>Invite Friends</span></a>
@@ -73,15 +74,14 @@
 						<div class="clear"></div>
 					</div>
 				</article>				
-				<article>
-					<div class="postPic"><img src="images/profile/profile8.png"></div>
+								<article>
+					<div class="postPic"><img src="images/profile/profile8_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Dima Cahana </span>
 							 in 
 							<span class="golden">Rishon Letzion, Dror </span> 
 							4km
-							<img src="images/icons/iconArrival.png">
 						</div>
 						<div class="postTimes">
 							1 day ago . 89k views
@@ -91,22 +91,21 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 				</article>
 				<article>
-					<div class="postPic"><img src="images/profile/profile2.png"></div>
+					<div class="postPic"><img src="images/profile/profile2_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Dora Bitan </span>
 							 in 
 							<span class="golden">Ashdod, Calanit </span> 
 							35km
-							<img src="images/icons/iconArrival.png">
 						</div>
 						<div class="postTimes">
 							1 day ago . 89k views
@@ -116,22 +115,21 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 				</article>
 				<article>
-					<div class="postPic"><img src="images/profile/profile5.png"></div>
+					<div class="postPic"><img src="images/profile/profile5_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Adam Levin </span>
 							 in 
 							<span class="golden">Kfar Tavor, Galili </span> 
 							89km
-							<img src="images/icons/iconArrival.png">
 						</div>
 						<div class="postTimes">
 							1 day ago . 89k views
@@ -141,29 +139,36 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 				</article>
 			</main>
 			<aside>
-				<article class="box">
-					<h2>Hot Coupons</h2>
+				<article class="box friends">
+					<h2>Invite Friends</h2>
+					<ul>
+						<li><img src="images/profile/profile6_40.png"></li>
+						<li><img src="images/profile/profile1_40.png"></li>
+						<li><img src="images/profile/profile4_40.png"></li>
+						<li><img src="images/profile/profile9_40.png"></li>
+						<div class="clear"></div>
+					</ul>
 					<div>
 						<div><span>0</span><br><span>Going</span></div>
 						<div><span>0</span><br><span>Maybe</span></div>
 						<div><span>4</span><br><span>Invited</span></div>
 						<div class="clear"></div>
 					</div>
-					<div class="clear"></div>
+					
 				</article>
 				<article class="box">
 					<h2>Attached</h2>
 					<div>
-						<figure>
+						<figure id="pics">
 						<img src="images/attached/img1.png" alt="Michael Kors">
 						<figcaption>My Grandfather</figcaption>
 						</figure>						
@@ -172,16 +177,19 @@
 				</article>
 				<article class="box">
 					<h2>How to get here</h2>
-					<p>
-						<figure>
+					<figure id="miniMap">
 						<img src="images/smallMap.png" alt="map">
 						<figcaption>Rishon Letzion, Dror</figcaption>
-						</figure>
-					</p>
+					</figure>
 					<div class="clear"></div>
 				</article>
 			</aside>
 			<div class="clear"></div>
 		</div>
+		<script>
+			(function() {									
+				addEventListenersTask();
+			})();
+		</script>
 	</body>
 </html>

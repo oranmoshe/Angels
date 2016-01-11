@@ -28,6 +28,7 @@ p{
 }
 a img{
 	border: 0px;
+	vertical-align: middle;
 }
 /* header */
 header{
@@ -46,7 +47,7 @@ header nav ul li {
 	height: 50px;
 	text-align: center;
 }
-header nav ul li:hover {
+header nav ul li:hover, header nav ul li.current {
 	background-color: #E3E7EB;
 }
 header nav ul li img{
@@ -117,7 +118,6 @@ article nav ul li{
 	border-bottom: 1px solid #D8DFE2;
 }
 article nav ul li img{
-	width: 16px;
 	margin-right: 10px;
 }
 article nav ul li:last-child{
@@ -246,7 +246,6 @@ main{
 }
 .postPic img{
 	vertical-align: top;
-	width: 100%;
 }
 .postBody{
 	padding-top: 5px;
@@ -281,7 +280,6 @@ main{
 }
 .activity span img{
 	margin-right: 5px;
-	height: 12px;
 	vertical-align: middle;
 }
 
@@ -298,14 +296,13 @@ aside figure{
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
-aside figure img{
-	width: 80%;
-}
 aside figure figcaption span{
 	font-size: 10px;
 }
 aside figure figcaption img{
 	width: 10%;
+	vertical-align: middle;
+	margin-right: 3px;
 }
 /* alerts */
 
@@ -345,14 +342,17 @@ aside figure figcaption img{
 	height: 100%;
 }
 #taskPage aside figure{
-	width: 50%;
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	float: left;
 }
-#taskPage aside figure img{
-	width: 80%;
+#taskPage aside figure#pics{
+	width: 46%;
+	margin-left: 2%;
+}
+#taskPage aside figure#pics img{
+	width: 100%;
 }
 #taskPage aside figure figcaption span{
 	font-size: 10px;
@@ -360,8 +360,12 @@ aside figure figcaption img{
 #taskPage aside figure figcaption img{
 	width: 10%;
 }
+#taskPage aside figure#miniMap{
+	width: 100%;
+}
+
 #taskPage #wrapper aside article>div{
-	padding: 2%;
+	padding-bottom: 2%;
 }
 #taskPage #wrapper aside article div div{
 	text-align: center;
@@ -372,7 +376,8 @@ aside figure figcaption img{
 #taskPage #wrapper aside article div div span:nth-child(1){
 	font-size: 20px;
 }
-.toggle{
+#taskPage .toggle{
+	margin-top: 5px;
 	display: none;	
 }
 
@@ -465,4 +470,71 @@ aside figure figcaption img{
 	font-size: 16px;
 	font-family: 'Josefin Sans', sans-serif;
 }
-
+article.box.friends{
+	padding: 0px;
+	overflow: auto;
+}
+article.box.friends ul li{
+	border: 0px;
+	width: 25%;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	height: 70px;
+	text-align: center;
+}
+article.box.friends ul li img{
+	margin-top: 5px;
+}
+article.box.friends>div{
+	border-top: 1px solid #D0D8DC;
+}
+article.box.friends div div{
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+#newPostLarge {
+	-webkit-animation-name: extend; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: extend;
+    animation-duration: 1s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes extend {
+    from {height: 100px;}
+    to {height: 177px;}
+}
+/* Standard syntax */
+@keyframes extend {
+    from {height: 100px}
+    to {height: 177px;}
+}
+#extendedInput {
+	display: none;
+	
+}
+#showExtendedInput{
+	-webkit-animation-name: show; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    animation-name: show;
+    animation-duration: 3s;
+}
+@-webkit-keyframes show {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+/* Standard syntax */
+@keyframes show {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+.category {
+	width:200px;
+	height:25px;
+	margin-right:10px;
+}
+.time {
+	width:150px;
+	height:25px;
+	margin-right:10px;
+}

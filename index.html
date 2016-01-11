@@ -5,6 +5,7 @@
 		<link href="includes/style.css" rel="stylesheet">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,700,700italic,600italic,600,400italic,300italic' rel='stylesheet' type='text/css'>
+		<script src="includes/scripts.js"></script>
 	</head>
 	<body>
 		<header>
@@ -28,7 +29,7 @@
 					<li>
 						<img src="images/header/notifications.png">
 					</li>
-					<li>
+					<li class="current">
 						<a href="index.html"><img src="images/header/home.png"></a>
 					</li>
 					<li>
@@ -109,16 +110,39 @@
 				</article>
 			</section>
 			<main>
-				<article>
-					<a><img src="images/icons/iconPhotoGold.png"  style="width: 16px;"><span>Add Photo/Video</span></a>
-					<a><img src="images/icons/iconDocumentGold.png" style="width: 14px;vertical-align: middle;"><span>Add Document</span></a>
+				<article id="newPost">
+					<a><span><img src="images/icons/iconPhotoGold.png"> Add Photo/Video</span></a>
+					<a><span><img src="images/icons/iconDocumentGold.png"> Add Document</span></a>
 					<br>
-					<input placeholder="Need some help?" class="tb">
-					<br><br>
-					<a><img src="images/icons/iconPinGold.png"  style="width: 10px;"><span>Ramat Gan, Anna Frank</span></a>
-					<a><img src="images/icons/iconFriendsGold.png" style="width: 15px;vertical-align: middle;"><span>Invite Friends</span></a>
-					<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn">
+					<label><input placeholder="Need some help?" class="tb" id="postText"></label>
+					<br>
+					<section id="extendedInput">
+						<label>
+							<select name="mainCategory" class="tb category" >
+								<option value="people" selected>People</option>
+								<option value="pets">Pets</option>
+								<option value="elder">Elder</option>
+								<option value="children">Children</option>
+							</select>
+						</label>
+						<label>
+							<select name="subCategory" class="tb category" >
+								<option value="health" selected>Health</option>
+								<option value="mobility">Mobility</option>
+								<option value="food">Food</option>
+								<option value="shelter">Shelter</option>
+							</select>
+						</label>
+						<br>
+						<label><input type="date" class="tb time" ></label>
+						<label><input type="time" class="tb time" ></label>
+					</section>
+					<br>
+					<a><img src="images/icons/iconPinGold.png"><span>Ramat Gan, Anna Frank</span></a>
+					<a><img src="images/icons/iconFriendsGold.png"><span>Invite Friends</span></a>
+					<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn" id="sendPost">
 					<input type="image" src="images/buttons/btnPublic.png" alt="Submit" class="btn">
+					<br>
 					<div class="clear"></div>
 				</article>
 				<article class="box">
@@ -126,11 +150,11 @@
 						Angels Map
 					</h2>
 					<p>
-						<img src="images/mapIndex.png" style="width: 100%;">
+						<img src="images/mapIndex.png">
 					</p>
 				</article>
 				<article>
-					<div class="postPic"><img src="images/profile/profile8.png"></div>
+					<div class="postPic"><img src="images/profile/profile8_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Dima Cahana </span>
@@ -147,15 +171,15 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 				</article>
 				<article>
-					<div class="postPic"><img src="images/profile/profile2.png"></div>
+					<div class="postPic"><img src="images/profile/profile2_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Dora Bitan </span>
@@ -172,15 +196,15 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
 				</article>
 				<article>
-					<div class="postPic"><img src="images/profile/profile5.png"></div>
+					<div class="postPic"><img src="images/profile/profile5_40.png"></div>
 					<div class="postBody">
 						<div class="postContact">
 							<span class="golden">Adam Levin </span>
@@ -197,9 +221,9 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGold.png">3.4k</span>
-							<span><img src="images/icons/iconShareGold.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGold.png">3.2k</span>
+							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -213,12 +237,33 @@
 						<figcaption>Michael Kors<br><span><img src="images/icons/iconCoinsGold.png">1025 coins</span></figcaption>
 					</figure>
 					<figure>
-						<img src="images/cuopons/s-l400.png" alt="Michael Kors">
+						<img src="images/cuopons/s-l400.jpg" alt="Michael Kors">
 						<figcaption>GoPro HERO4<br><span><img src="images/icons/iconCoinsGold.png">800 coins</span></figcaption>
 					</figure>
 				</article>
 			</aside>
 			<div class="clear"></div>
 		</div>
+		
+		<section class="lightBox">
+			<article class="box">
+				<h2>Add Friends</h2>
+				<section>
+					<div class="findFriend">
+						
+					</div>
+					<div class="selectedFriend">
+						
+					</div>
+					<div class="clear"></div>
+				</section>
+			</article>
+		</section>
+		
+		<script>
+			(function() {									
+				addEventListeners();
+			})();
+		</script>
 	</body>
 </html>
