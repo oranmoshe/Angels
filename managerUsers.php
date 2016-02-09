@@ -43,6 +43,24 @@ if(!$result){
 }
 mysql_free_result($result);
 
+// Delete User
+
+if (isset($_POST['delete'])) {
+	$users = $_POST['users'];
+	if(!empty($users)) {
+		foreach($users as $user) {
+			$result = mysql_query("DELETE FROM `tbl_angels_users_205` WHERE UserID = $user");
+			if(!$result){
+				echo "Error";
+			}else{
+			}
+		}
+	}
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +110,7 @@ mysql_free_result($result);
 								Tasks</a>
 							</li>
 							<li>
-							<a href="managerUsers.php"><img src="images/icons/iconFriends.png">
+							<a href="#"><img src="images/icons/iconFriends.png">
 								Users</a>
 							</li>
 							<li>
@@ -135,92 +153,84 @@ mysql_free_result($result);
 						</ul>
 				</article>
 			</section>
-			<main id="bigMain">
+			<main id="bigMain">				
 				<article class="box">
-					<h2>
-						Last Tasks						
-					</h2>
-					<article class="menu">
-						<span>Action</span>
-						<nav class="box">
-							<ul>
-								<li>
-									<a href="#"> Finished</a>
-								</li>
-								<li>
-									<a href="#"> Edit</a>
-								</li>
-								<li>
-									<a href="#"> Delete</a>
-								</li>
-								<li>
-									<a href="#"> Turn Off Nonifications</a>
-								</li>
-							</ul>
-						</nav>
-					</article>
-				
-					<article class="tableView">
-					  <table>
-						<?php 	
-						// Get Task details						
-						$result = mysql_query("SELECT `TaskID`,`UserID`,`Description`, `Time`,`Location`, `Category`,`SubCategory`,`Value` FROM `tbl_angels_tasks_205`  ORDER BY `Time` DESC LIMIT 0,10");
-
-						if(!$result){
-							echo "Error";
-						}else{
+					<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+						<h2>
+							Users						
+						</h2>					
+						<article class="menu">
+							<span>Action</span>
+							<nav class="box" id="managerAction">
+								<ul>
+									<li>
+										<a href="#"  class="lightBoxOppener" data-lightbox-id="delete">Delete</a>
+									</li>
+									<li>
+										<a href="#"> Block</a>
+									</li>
+								</ul>
+							</nav>
+						</article>
+						<div class="searchbar"><input type="search" results="5" class="tb" placeholder="Find Users..'"></div>
+						<?php
+							// Get User details
+							$result = mysql_query("SELECT `FirstName`, `LastName`, `Level`, `ProfilePic40`,`Address`, `UserID` FROM `tbl_angels_users_205`");
 							while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-								$category = $row[5];
-								$subcategory = $row[6];
-								$location = $row[4];
-								$body = $row[2];
-								$time = $row[3];
-								$value = $row[7];
-								$userid = $row[1];
-								$taskid = $row[0];
-								?>
-								<tr>
-								<?php
-								// Get User details
-								$result2 = mysql_query("SELECT `FirstName`, `LastName`, `Level`, `ProfilePic30` FROM `tbl_angels_users_205` WHERE UserID = '$userid'");
-								if(!$result2){
+								if(!$result){
 									echo "Error";
 								}else{
-									$row2 = mysql_fetch_array($result2, MYSQL_NUM);
-									$fname = $row2[0];
-									$lname = $row2[1];
-									$level = $row2[2];
-									$pic = $row2[3];
+									$fname = $row[0];
+									$lname = $row[1];
+									$level = $row[2];
+									$pic = $row[3];
+									$address = $row[4];
+									$userid = $row[5];
 									?>
-									<td><input type="checkbox" name="users[]"></td>
-									<td><?php 
-										$format = 'Y-m-d H:i:s';
-										$date = DateTime::createFromFormat($format, $time);
-										$now = new DateTime();
-										
-										if($date < $now) {
-										    echo "<div class=\"day\"><span>".$date->format('d')."</span></div>";
-										}else{
-											echo "<div class=\"day golden\"><span>".$date->format('d')."</span></div>";
-										}
-										?></td>
-									<td><img src="images/profile/<?php echo $pic; ?>" class="profile30"></td>
-									<td><span class="golden"><?php echo $fname ." ". $lname; ?></span></td>
-									<td><?php echo substr($body,0,20); ?></td>
-									<td><?php echo rand(10,100); ?>km</td>
-									<td><?php echo $subcategory; ?></td>
-									<td>edit</td>
-								</tr>
+									<div class="userBox">	
+										<div class="boxProfilePicker">
+											<input type="checkbox" name="users[]" value="<?php echo $userid; ?>">
+										</div>								
+										<div class="boxProfilePic">
+											<img src="images/profile/<?php echo $pic; ?>">
+										</div>
+										<div class="boxProfileInfo">					
+											<span class="golden">
+												<?php
+													echo $fname. " ".$lname;
+												 ?>
+											</span>
+											<br>
+											<span class="ProfileLevel">
+												<?php
+													echo $address;
+												 ?>
+											</span>
+										</div>
+										<div class="clear"></div>
+									</div>
 									<?php
 								}
-								mysql_free_result($result2);
 							}
-						}
-						mysql_free_result($result);
+							mysql_free_result($result);
 						?>
-					  </table>
-					</article>
-				</article>				
+						<div class="clear"></div>
+						<!-- light box -->
+						<div id="delete" class="lightBoxContainer">
+							<section class="lightBox">
+								<article class="box">
+									<h2>Delete User <img src="images/icons/iconClose.png" class="closeLightBox"></h2>
+									<h3 class="alert red">Are you sure you want to delete <?php echo $fname . " " . $lname; ?>
+									user?</h3>
+									<div>
+										<input type="submit" value="Send" alt="Submit" name="delete" class="btn">
+										<div class="clear"></div>
+									</div>
+								</article>
+							</section>
+						</div>
+					</form>
+				</article>
 			</main>
 			<div class="clear"></div>
 		</div>
