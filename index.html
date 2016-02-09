@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title></title>
-		<link href="includes/style.css" rel="stylesheet">
+		<title>Angels</title>
+		<meta charset="UTF-8" />
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300,700,700italic,600italic,600,400italic,300italic' rel='stylesheet' type='text/css'>
 		<script src="includes/scripts.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<link href="includes/style.css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	</head>
 	<body>
 		<header>
 			<div id="headerLogo">
-				<img src="images/logoSmall.png">
+				<a href="#"></a>
 			</div>
 			<div id="headerSearch">
 				<input type="search" results="5" class="tb" placeholder=" Search Tasks, Friends etc'">
@@ -18,22 +21,25 @@
 			<nav>
 				<ul>
 					<li>
-						<img src="images/header/settings.png">
+						<a href="#"><img src="images/header/settings.png"></a>
 					</li>
 					<li>
-						<img src="images/header/shop.png">
+						<a href="#"><img src="images/header/shop.png"></a>
 					</li>
 					<li>
-						<img src="images/header/tasks.png">
+						<a href="#"><img src="images/header/tasks.png"></a>
 					</li>
 					<li>
-						<img src="images/header/notifications.png">
+						<a href="#"><img src="images/header/notifications.png"></a>
 					</li>
 					<li class="current">
 						<a href="index.html"><img src="images/header/home.png"></a>
 					</li>
 					<li>
-						<img src="images/profile/profile1.png">
+						<a href="#"><img src="images/profile/profile1.png"></a>
+					</li>
+					<li id="humburger">
+						<a href="#"><img src="images/icons/iconHumburger.png"></a>
 					</li>
 				</ul>
 			</nav>
@@ -60,28 +66,28 @@
 					<nav>
 						<ul>
 							<li>
-								<img src="images/icons/iconTasks.png">
-								Tasks
+							<a href="#"><img src="images/icons/iconTasks.png">
+								Tasks</a>
 							</li>
 							<li>
-								<img src="images/icons/iconFriends.png">
-								Friends
+							<a href="#"><img src="images/icons/iconFriends.png">
+								Friends</a>
 							</li>
 							<li>
-								<img src="images/icons/iconMessages.png">
-								Messages
+							<a href="#"><img src="images/icons/iconMessages.png">
+								Messages</a>
 							</li>
 							<li>
-								<img src="images/icons/iconWallet.png">
-								Wallet
+							<a href="#"><img src="images/icons/iconWallet.png">
+								Wallet</a>
 							</li>
 							<li>
-								<img src="images/icons/iconShop.png">
-								Shop
+							<a href="#"><img src="images/icons/iconShop.png">
+								Shop</a>
 							</li>
 							<li>
-								<img src="images/icons/iconSettings.png">
-								Settings
+							<a href="#"><img src="images/icons/iconSettings.png">
+								Settings</a>
 							</li>
 						</ul>
 					</nav>
@@ -90,10 +96,10 @@
 					<h2><img src="images/icons/iconTasks.png">Task Queue</h2>
 						<ul>
 							<li>
-								Painting
+								<a href="#">Painting</a>
 							</li>
 							<li>
-								Hitchhiking
+								<a href="#">Hitchhiking</a>
 							</li>
 						</ul>
 				</article>
@@ -101,49 +107,51 @@
 					<h2><img src="images/icons/iconCuopons.png"> Coupons</h2>
 						<ul>
 							<li>
-								Aromma
+								<a href="#">Aromma</a>
 							</li>
 							<li>
-								Adir Miller
+								<a href="#">Adir Miller</a>
 							</li>
 						</ul>
 				</article>
 			</section>
 			<main>
 				<article id="newPost">
-					<a><span><img src="images/icons/iconPhotoGold.png"> Add Photo/Video</span></a>
-					<a><span><img src="images/icons/iconDocumentGold.png"> Add Document</span></a>
-					<br>
-					<label><input placeholder="Need some help?" class="tb" id="postText"></label>
-					<br>
-					<section id="extendedInput">
-						<label>
-							<select name="mainCategory" class="tb category" >
-								<option value="people" selected>People</option>
-								<option value="pets">Pets</option>
-								<option value="elder">Elder</option>
-								<option value="children">Children</option>
-							</select>
-						</label>
-						<label>
-							<select name="subCategory" class="tb category" >
-								<option value="health" selected>Health</option>
-								<option value="mobility">Mobility</option>
-								<option value="food">Food</option>
-								<option value="shelter">Shelter</option>
-							</select>
-						</label>
+					<form method="post">
+						<a><span><img src="images/icons/iconPhotoGold.png"> Add Photo/Video</span></a>
+						<a><span><img src="images/icons/iconDocumentGold.png"> Add Document</span></a>
 						<br>
-						<label><input type="date" class="tb time" ></label>
-						<label><input type="time" class="tb time" ></label>
-					</section>
-					<br>
-					<a><img src="images/icons/iconPinGold.png"><span>Ramat Gan, Anna Frank</span></a>
-					<a><img src="images/icons/iconFriendsGold.png"><span>Invite Friends</span></a>
-					<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn" id="sendPost">
-					<input type="image" src="images/buttons/btnPublic.png" alt="Submit" class="btn">
-					<br>
-					<div class="clear"></div>
+						<label><input placeholder="Need some help?" class="tb" id="postText"></label>
+						<br>
+						<section id="extendedInput">
+							<label>
+								<select name="mainCategory" class="tb category" >
+									<option value="people" selected>People</option>
+									<option value="pets">Pets</option>
+									<option value="elder">Elder</option>
+									<option value="children">Children</option>
+								</select>
+							</label>
+							<label>
+								<select name="subCategory" class="tb category" >
+									<option value="health" selected>Health</option>
+									<option value="mobility">Mobility</option>
+									<option value="food">Food</option>
+									<option value="shelter">Shelter</option>
+								</select>
+							</label>
+							<br>
+							<label><input type="date" class="tb time" required></label>
+							<label><input type="time" class="tb time" required></label>
+						</section>
+						<br>
+						<a><img src="images/icons/iconPinGold.png"><span>Ramat Gan, Anna Frank</span></a>
+						<a id="startLightBox"><img src="images/icons/iconFriendsGold.png"><span>Invite Friends</span></a>
+						<input type="image" src="images/buttons/btnPost.png" alt="Submit" class="btn" id="sendPost">
+						<input type="image" src="images/buttons/btnPublic.png" alt="Submit" class="btn">
+						<br>
+						<div class="clear"></div>
+					</form>
 				</article>
 				<article class="box">
 					<h2>
@@ -171,9 +179,9 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+						<a href="#">	<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
 							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span></a>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -196,9 +204,9 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<a href="#"><span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
 							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span></a>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -221,9 +229,9 @@
 						</div>
 						<div class="readmore">read more</div>
 						<div class="activity">
-							<span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
+							<a href="#"><span><img src="images/icons/iconLikeGoldSmall.png">3.4k</span>
 							<span><img src="images/icons/iconShareGoldSmall.png">1.2k</span>
-							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span>
+							<span><img src="images/icons/iconCommentGoldSmall.png">3.2k</span></a>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -233,36 +241,67 @@
 				<article class="box">
 					<h2>Hot Coupons</h2>
 					<figure>
-						<img src="images/cuopons/bag.png" alt="Michael Kors">
-						<figcaption>Michael Kors<br><span><img src="images/icons/iconCoinsGold.png">1025 coins</span></figcaption>
+						<a href="#"><img src="images/cuopons/bag.png" alt="Michael Kors">
+						<figcaption>Michael Kors<br><span><img src="images/icons/iconCoinsGold.png">1025 coins</span></figcaption></a>
 					</figure>
 					<figure>
-						<img src="images/cuopons/s-l400.jpg" alt="Michael Kors">
-						<figcaption>GoPro HERO4<br><span><img src="images/icons/iconCoinsGold.png">800 coins</span></figcaption>
+						<a href="#"><img src="images/cuopons/s-l400.jpg" alt="Michael Kors">
+						<figcaption>GoPro HERO4<br><span><img src="images/icons/iconCoinsGold.png">800 coins</span></figcaption></a>
 					</figure>
 				</article>
 			</aside>
 			<div class="clear"></div>
 		</div>
-		
-		<section class="lightBox">
-			<article class="box">
-				<h2>Add Friends</h2>
-				<section>
-					<div class="findFriend">
+		<div id="dimScreen">
+			<section class="lightBox">
+				<article class="box">
+					<h2>Invite Friends <img src="images/icons/iconClose.png" id="closeLightBox"></h2>
+					<section>
+						<div class="findFriend">
+							<div>
+								<input type="search" results="5" class="tb" placeholder="Find Friends..">
+							</div>
+							<div>
+								<ul>
+									<li><label><input type="checkbox" checked="checked"><img src="images/profile/profile6_60.png"><span>Amit Abarvov</span></label></li>
+									<li><label><input type="checkbox" checked="checked"><img src="images/profile/profile1_60.png"><span>Bar Cohen</span></label></li>
+									<li><label><input type="checkbox" checked="checked"><img src="images/profile/profile4_60.png"><span>Dima Cahana</span></label></li>
+									<li><label><input type="checkbox" checked="checked"><img src="images/profile/profile9_60.png"><span>Dana Teshbi</span></label></li>
+									<li><label><input type="checkbox"><img src="images/profile/profile6_60.png"><span>Amit Abarvov</span></label></li>
+									<li><label><input type="checkbox"><img src="images/profile/profile1_60.png"><span>Bar Cohen</span></label></li>
+									<li><label><input type="checkbox"><img src="images/profile/profile4_60.png"><span>Dima Cahana</span></label></li>
+									<li><label><input type="checkbox"><img src="images/profile/profile9_60.png"><span>Dana Teshbi</span></label></li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+						</div>
+						<div class="selectedFriend">
+							<span>selected</span>
+							<span>4</span>
+							<div>
+								<ul>
+									<li><label><img src="images/profile/profile6_40.png"><span>Amit Abarvov</span></label></li>
+									<li><label><img src="images/profile/profile1_40.png"><span>Bar Cohen</span></label></li>
+									<li><label><img src="images/profile/profile4_40.png"><span>Dima Cahana</span></label></li>
+									<li><label><img src="images/profile/profile9_40.png"><span>Dana Teshbi</span></label></li>
+									<div class="clear"></div>
+								</ul>
+							</div>
+							<div class="clear"></div>
+						</div>
 						
-					</div>
-					<div class="selectedFriend">
-						
-					</div>
+					</section>
 					<div class="clear"></div>
-				</section>
-			</article>
-		</section>
-		
+				</article>
+				<article class="boxClose">
+					<input type="image" src="images/buttons/invite.png" alt="Submit"  class="btn" id="closeLightBoxNow">
+					<div class="clear"></div>
+				</article>
+			</section>
+		</div>
 		<script>
 			(function() {									
-				addEventListeners();
+				init();
 			})();
 		</script>
 	</body>

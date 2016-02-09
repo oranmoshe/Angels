@@ -94,9 +94,12 @@ header nav{
 	margin-left: 10%;
 	float: left;
 }
-#headerLogo img{
+#headerLogo a{
 	margin-top: 5px;
 	height: 40px;
+	background-image: url(../images/logoSmall.png);
+	width: 98px;
+	display: block;
 }
 /* wrapper */
 #wrapper{
@@ -125,12 +128,13 @@ article nav ul li:last-child{
 }
 article a {
 	margin-right: 20px;
-	color: #78909c;
+	color: #546e7a;
 }
 article .btn{
 	height: 22px;
 	float: right;
 	margin-left: 10px;
+	cursor: pointer;
 }
 article a img{
 	margin: 5px;
@@ -139,6 +143,10 @@ article a img{
 
 article.box{
 	padding: 0px;
+	position: relative;
+}
+.boxClose{
+	border-bottom: 1px solid #D8DFE2;
 }
 article.box h2{
 	padding-left: 10px;
@@ -148,9 +156,57 @@ article.box h2{
 	line-height: 45px;
 	color: #546e7a;
 }
+article.box h2 img.close, article.box h2 img.closeLightBox{
+	width: 10px;
+	float: right;
+	margin-top: 15px;
+}
 article.box h2 img{ 
 	width: 16px;
 	margin-right: 10px;
+}
+article.menu{
+	height: 100%;
+	right: 0px;
+	top: 5px;
+	position: absolute;
+	border: 0px;
+	background: none;
+}
+article.menu:hover nav{
+	display: block;
+}
+article.menu nav{
+	display: none;
+	position: absolute;
+	width: 170px;
+	background-color: white;
+	top: 40px;
+	right: 0px;
+	border: 1px solid #D8DFE2;
+} 
+article.box .action:after{
+	clear: both;
+}
+.actionMenu{
+	right: -30px;
+	position: absolute;
+}
+article.tableView{
+	style: overflow-x:auto;
+}
+article.box h3{
+	padding-left: 10px;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	color: #546e7a;
+}
+article.box ul li a{
+	color: #546e7a;	
+}
+article.box ul li img{
+	vertical-align: center;
 }
 article.box ul li{
 	vertical-align: center;
@@ -162,6 +218,14 @@ article.box ul li{
 article ul li:last-child{
 	border-bottom: 0px;
 }
+.placeholder{
+	position: absolute;
+	top: 22px;
+	left: 25px;
+	font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #546e7a;
+}
 .tb{
 	height: 25px;
 	margin: 5px;
@@ -171,6 +235,9 @@ article ul li:last-child{
 	width: 96%;	
 	border: 1px solid #C8D2D7;
 	border-radius: 3px;
+	outline: none;
+	resize: none;
+	overflow: auto;
 }
 .tb::-webkit-input-placeholder { /* Safari, Chrome and Opera */
   color: #78909c;
@@ -193,6 +260,40 @@ article ul li:last-child{
 .golden{
 	color: #c3bb38;
 }
+.day{
+	text-align: center;
+	vertical-align: middle;
+	line-height: 18px;
+	height: 18px;
+	width: 18px;
+	color: white;
+	font-weight:700;
+	background-color: #b0bec5;
+}
+.day.golden{
+	background-color: #c3bb38;
+}
+
+
+/* tabels */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 5px;
+}
+td img{
+	vertical-align: middle;
+}
+tr:last-child{
+	border: 0px;
+}
+tr{
+    border-bottom: 1px solid #D8DFE2;
+}
 
 /* nav part */
 section#leftSec{
@@ -201,9 +302,9 @@ section#leftSec{
 	float: left;
 	height: 100%;
 }
+
 .boxProfilePic{
 	float: left;
-	width: 26%;
 	text-align: right;
 	padding: 4%;
 }
@@ -231,10 +332,38 @@ section#leftSec{
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
+.boxProfilePicker{
+	float: left;
+	vertical-align: middle;
+	height:  50px;
+	line-height: 50px;
+	padding-left:10px;
+}
+.userBox{
+	width: 33%;
+	height: 100px;
+	float: left;
+}
+.searchbar{
+	top: 5px;
+	left: 200px;
+	position: absolute;
+	width: 300px;
+}
+
+
+
 /* content part */
 main{
 	margin-left:20px;
 	width: 538px;
+	float: left;
+	height: 100%;
+}
+main#bigMain{
+	margin-left:20px;
+	width: 730px;
 	float: left;
 	height: 100%;
 }
@@ -282,7 +411,6 @@ main{
 	margin-right: 5px;
 	vertical-align: middle;
 }
-
 /* cuopons part*/
 aside{
 	margin-left:20px;
@@ -312,7 +440,6 @@ aside figure figcaption img{
 	height: 15px;
 }
 .alert span{
-	color: #689f38;
 	margin: 20px;
 }
 .alert .icon{
@@ -324,8 +451,21 @@ aside figure figcaption img{
 	right: 5px;
 }
 .alert.green{
+	color: #689f38;
 	border-color: #72bb53;
 }
+.alert.red{
+	color: red;
+	border-color: red;
+}
+.green, article.box h3.green{
+	color: #689f38;
+}
+.red, article.box h3.red{
+	color: red;
+}
+
+
 /* task part*/
 #taskPage #wrapper{
 	margin: 70px auto;
@@ -385,7 +525,8 @@ aside figure figcaption img{
 	float: left;
 	position: relative;
 	height: 110px;
-	width: 237px;
+	width: 238px;
+	margin-right: 0px;
 	font-size: 90px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;
@@ -431,10 +572,14 @@ aside figure figcaption img{
 	border-bottom-right-radius: 0px;
 	float: left;
 	border-left: 0px;
-	width: 298px;
+    width: 297px;
 	height: 110px;
 	color: #546e7a;
 	margin-bottom: 0px;
+}
+.box.details .row div img{
+	margin-right: 10px;
+	vertical-align: middle;
 }
 .box.details .row{
 	padding-left: 5px;
@@ -462,7 +607,6 @@ aside figure figcaption img{
 	border-top-right-radius: 0px;
 	border-top-left-radius: 0px;
 	position: relative;
-	width: 516px;
 	border-top: 0px;
 	padding: 10px;
 }
@@ -493,27 +637,44 @@ article.box.friends div div{
 	margin-top: 2px;
 	margin-bottom: 2px;
 }
-#newPostLarge {
+.newPostLarge {
+	-webkit-animation-name: extend2; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
+    animation-name: extend2;
+    animation-duration: 1s;
+    border-color: #c3bb38;
+}
+.newPostExtraLarge {
 	-webkit-animation-name: extend; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 1s; /* Chrome, Safari, Opera */
     animation-name: extend;
     animation-duration: 1s;
+    border-color: #c3bb38;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes extend {
     from {height: 100px;}
-    to {height: 177px;}
+    to {height: 177px;border-color: #c3bb38;}
 }
 /* Standard syntax */
 @keyframes extend {
     from {height: 100px}
-    to {height: 177px;}
+    to {height: 177px;border-color: #c3bb38;}
 }
-#extendedInput {
+/* Chrome, Safari, Opera */
+@-webkit-keyframes extend2 {
+    from {height: 80px;}
+    to {height: 87px;border-color: #c3bb38;}
+}
+/* Standard syntax */
+@keyframes extend2 {
+    from {height: 80px}
+    to {height: 87px;border-color: #c3bb38;}
+}
+.extendedInput {
 	display: none;
-	
 }
-#showExtendedInput{
+.showExtendedInput{
 	-webkit-animation-name: show; /* Chrome, Safari, Opera */
     -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
     animation-name: show;
@@ -521,7 +682,7 @@ article.box.friends div div{
 }
 @-webkit-keyframes show {
     from { opacity: 0; }
-    to   { opacity: 1; }
+    to   { opacity: 1;}
 }
 /* Standard syntax */
 @keyframes show {
@@ -537,4 +698,220 @@ article.box.friends div div{
 	width:150px;
 	height:25px;
 	margin-right:10px;
+}
+/* light box */
+.lightBox .box{
+	margin-bottom:0px;
+	border-bottom-right-radius:0px;
+	border-bottom-left-radius:0px;
+}
+.lightBox .boxClose{
+	width: 520px;
+	border-top-right-radius:0px;
+	border-top-left-radius:0px;
+	border-top: 0px;
+	margin-top:0px;
+}
+.lightBox article{
+	width: 540px;
+}
+.findFriend{
+	max-height: 500px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: center;
+	float: left;
+	width:320px;
+	border-right: 1px solid #D0D8DC;
+}
+.findFriend input{
+	margin: 15px 0px 15px 0px;
+	width: 298px;
+}
+
+.findFriend div ul li input{
+	border-right: 1px solid #D0D8DC;
+    width:20px;
+    position:relative;
+    left: 10px; 
+    vertical-align:middle; 
+}
+
+.findFriend div ul li label{  
+    width:200px;       
+    position:relative;
+    display:inline-block;    
+    vertical-align:middle; 
+}
+.findFriend div ul li,.selectedFriend div ul li{
+	text-align: left;
+	border: 0px;
+	height: 70px;
+	padding-top: 10px;
+}
+.findFriend div ul li img, .selectedFriend div ul li img{
+	vertical-align: middle;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.selectedFriend{
+	float: left;	
+	width:190px;
+	margin: 10px;
+}
+.selectedFriend div{
+	margin-top: 20px;
+} 
+.selectedFriend div ul li{
+	height: 60px;
+}
+.selectedFriend span{
+	margin-right: 10px;
+}
+.selectedFriend span + span{
+	float: right;
+}  
+.mylightbox{
+	visibility: hidden;
+}
+.lightBoxContainer {
+	visibility: hidden;
+	z-index: 99999999;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.5);
+}
+#startLightBox:hover{
+	cursor: pointer; cursor: hand;
+}
+.lightBox{
+	width: 540px;
+	display: block;
+	margin: 70px auto;
+}
+
+@media only screen and (min-width: 1039px){
+	#humburger{
+		display: none;
+	}
+}
+@media  only screen and (min-width: 800px) and (max-width: 1038px){
+	aside{
+		margin-left: 0px;
+		display: none;
+	}
+	#taskPage aside{
+		display: block;
+	}
+	header nav ul li{
+		display: none;
+	}
+	#humburger{
+		display: block;
+	}
+	#headerSearch input{
+		width: 350px;
+	}
+	section#leftSec{
+		margin-left: 0px;
+	}
+	#wrapper{
+		width: 780px;
+	}
+	header nav{
+		margin-right: 2%;
+	}
+	#headerLogo{
+	    margin-left: 2%;
+   }
+
+}
+
+@media only screen and (max-width: 799px){
+	#humburger{
+		display: block;
+	}
+	header nav ul li{
+		display: none;
+	}
+	#headerSearch input{
+		display: none;		
+	}
+	aside{
+		display: none;
+	}
+	section#leftSec{
+		display: none;
+	}
+		header nav{
+		margin-right: 1%;
+	}
+	article p img{
+   		width: 100%;
+	}
+	#headerLogo{
+		margin-left: 1%;
+	}
+	#wrapper{
+		margin: 0px 5% 0px 5%;
+		width: 90%;
+		margin-top: 50px;
+  	}
+	main{
+		display: block;	
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+	.postPic{
+		min-width: 30px;
+	}
+	.box.profile,.box.details,.box.description {
+		border-top: 0px;
+		border-right: 1px solid #D0D8DC;
+		border-left: 1px solid #D0D8DC;
+		width: 100%;
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+	}
+	.box.profile{
+		border-top: 1px solid #D0D8DC;
+		border-top-right-radius: 2px;
+	}
+	.box.profile .pic {
+		margin-left: 20%;
+	}
+	.selectedFriend{
+		display: none;
+	}
+	.findFriend {
+		position: relative;
+	}
+   	.findFriend div:first-child{
+		position: fixed;
+		margin: 0 auto;
+		z-index: 99;
+		background-color: #ffffff;
+ 	}
+ 	.findFriend div + div{
+ 		margin-top: 55px;
+ 	}
+	section.lightBox{
+		width: 320px;
+	}
+	.findFriend{
+		height: 370px;
+ 	}
+	.lightBox article{
+		width: 320px;
+	}
+	.lightBox .boxClose{
+		width: 300px;
+	}
 }
